@@ -1,0 +1,122 @@
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <span class="page-hero__tag">Nosso Portfólio</span>
+    <h1 class="page-hero__title">Empreendimentos</h1>
+    <p class="page-hero__subtitle">
+      Descubra nossos projetos exclusivos nas melhores localizações de São Paulo
+    </p>
+  </div>
+</section>
+
+<!-- FILTERS -->
+<section class="filters">
+  <div class="container">
+    <div class="filters__grid">
+      <div class="filter-group">
+        <label>Status</label>
+        <select [(ngModel)]="filters.status" (change)="applyFilters()">
+          <option value="">Todos os status</option>
+          @for (status of statuses; track status) {
+            <option [value]="status">{{ status }}</option>
+          }
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Bairro</label>
+        <select [(ngModel)]="filters.neighborhood" (change)="applyFilters()">
+          <option value="">Todos os bairros</option>
+          @for (neighborhood of neighborhoods; track neighborhood) {
+            <option [value]="neighborhood">{{ neighborhood }}</option>
+          }
+        </select>
+      </div>
+      <button class="filter-clear" (click)="clearFilters()">
+        Limpar filtros
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- EMPREENDIMENTOS LIST -->
+<section class="empreendimentos-list section">
+  <div class="container">
+    <div class="results-count">
+      <p>{{ filteredEmpreendimentos.length }} empreendimento(s) encontrado(s)</p>
+    </div>
+
+    <div class="empreendimentos-grid">
+      @for (emp of filteredEmpreendimentos; track emp.id) {
+        <article class="emp-card">
+          <a [routerLink]="['/empreendimentos', emp.slug]" class="emp-card__link-wrapper">
+            <div class="emp-card__image">
+              <img [src]="emp.image" [alt]="emp.name" />
+              <div class="emp-card__overlay">
+                <span class="emp-card__status" [class]="emp.status.toLowerCase().replace(' ', '-')">
+                  {{ emp.status }}
+                </span>
+              </div>
+            </div>
+            <div class="emp-card__content">
+              <span class="emp-card__location">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+                {{ emp.location }}
+              </span>
+              <h3 class="emp-card__title">{{ emp.name }}</h3>
+              <p class="emp-card__desc">{{ emp.description }}</p>
+              <div class="emp-card__specs">
+                <div class="spec">
+                  <span class="spec-label">Área</span>
+                  <span class="spec-value">{{ emp.area }}</span>
+                </div>
+                <div class="spec">
+                  <span class="spec-label">Quartos</span>
+                  <span class="spec-value">{{ emp.rooms }}</span>
+                </div>
+                <div class="spec">
+                  <span class="spec-label">Suítes</span>
+                  <span class="spec-value">{{ emp.suites }}</span>
+                </div>
+              </div>
+              <div class="emp-card__footer">
+                <span class="emp-card__price">{{ emp.price }}</span>
+                <span class="emp-card__cta">
+                  Ver detalhes
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </a>
+        </article>
+      }
+    </div>
+
+    @if (filteredEmpreendimentos.length === 0) {
+      <div class="no-results">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+          <circle cx="11" cy="11" r="8"/>
+          <path d="M21 21l-4.35-4.35"/>
+        </svg>
+        <h3>Nenhum empreendimento encontrado</h3>
+        <p>Tente ajustar os filtros para ver mais resultados.</p>
+        <button class="btn btn--secondary" (click)="clearFilters()">Limpar filtros</button>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Não encontrou o que procura?</h2>
+      <p>Entre em contato e nossa equipe irá ajudá-lo a encontrar o imóvel ideal.</p>
+      <a routerLink="/contato" class="btn btn--light">Fale Conosco</a>
+    </div>
+  </div>
+</section>

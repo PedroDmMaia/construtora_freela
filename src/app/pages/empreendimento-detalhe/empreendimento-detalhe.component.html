@@ -1,0 +1,239 @@
+@if (empreendimento) {
+  <!-- HERO -->
+  <section class="detail-hero">
+    <div class="detail-hero__background">
+      <img [src]="empreendimento.gallery[0]" [alt]="empreendimento.name" />
+      <div class="detail-hero__overlay"></div>
+    </div>
+    <div class="detail-hero__content container">
+      <a routerLink="/empreendimentos" class="detail-hero__back">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        Voltar para empreendimentos
+      </a>
+      <span class="detail-hero__status">{{ empreendimento.status }}</span>
+      <h1 class="detail-hero__title">{{ empreendimento.name }}</h1>
+      <p class="detail-hero__location">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+          <circle cx="12" cy="10" r="3"/>
+        </svg>
+        {{ empreendimento.location }}
+      </p>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <section class="detail-content">
+    <div class="container">
+      <div class="detail-grid">
+        <!-- LEFT COLUMN -->
+        <div class="detail-main">
+          <!-- Gallery -->
+          <div class="detail-gallery">
+            <div class="gallery-main" (click)="openGallery(0)">
+              <img [src]="empreendimento.gallery[0]" [alt]="empreendimento.name" />
+              <div class="gallery-overlay">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"/>
+                  <path d="M21 21l-4.35-4.35"/>
+                  <path d="M11 8v6M8 11h6"/>
+                </svg>
+                <span>Ver galeria</span>
+              </div>
+            </div>
+            <div class="gallery-thumbs">
+              @for (img of empreendimento.gallery.slice(1, 4); track img; let i = $index) {
+                <div class="gallery-thumb" (click)="openGallery(i + 1)">
+                  <img [src]="img" alt="Galeria" />
+                  @if (i === 2 && empreendimento.gallery.length > 4) {
+                    <div class="gallery-thumb__more">
+                      +{{ empreendimento.gallery.length - 4 }}
+                    </div>
+                  }
+                </div>
+              }
+            </div>
+          </div>
+
+          <!-- Description -->
+          <div class="detail-section">
+            <h2>Sobre o Empreendimento</h2>
+            <p>{{ empreendimento.fullDescription }}</p>
+          </div>
+
+          <!-- Specs -->
+          <div class="detail-section">
+            <h2>Características</h2>
+            <div class="specs-grid">
+              <div class="spec-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="18" height="18" rx="2"/>
+                </svg>
+                <div>
+                  <span class="spec-label">Área</span>
+                  <span class="spec-value">{{ empreendimento.area }}</span>
+                </div>
+              </div>
+              <div class="spec-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 7v11a2 2 0 002 2h14a2 2 0 002-2V7"/>
+                  <path d="M21 7H3l2-4h14l2 4z"/>
+                </svg>
+                <div>
+                  <span class="spec-label">Quartos</span>
+                  <span class="spec-value">{{ empreendimento.rooms }}</span>
+                </div>
+              </div>
+              <div class="spec-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 6h11M9 12h11M9 18h11M5 6v.01M5 12v.01M5 18v.01"/>
+                </svg>
+                <div>
+                  <span class="spec-label">Suítes</span>
+                  <span class="spec-value">{{ empreendimento.suites }}</span>
+                </div>
+              </div>
+              <div class="spec-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="11" width="18" height="10" rx="1"/>
+                  <path d="M7 11V7a5 5 0 0110 0v4"/>
+                </svg>
+                <div>
+                  <span class="spec-label">Vagas</span>
+                  <span class="spec-value">{{ empreendimento.parking }}</span>
+                </div>
+              </div>
+              <div class="spec-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2"/>
+                  <path d="M16 2v4M8 2v4M3 10h18"/>
+                </svg>
+                <div>
+                  <span class="spec-label">Entrega</span>
+                  <span class="spec-value">{{ empreendimento.deliveryDate }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Amenities -->
+          <div class="detail-section">
+            <h2>Lazer e Comodidades</h2>
+            <div class="amenities-grid">
+              @for (amenity of empreendimento.amenities; track amenity) {
+                <div class="amenity-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                    <polyline points="22 4 12 14.01 9 11.01"/>
+                  </svg>
+                  {{ amenity }}
+                </div>
+              }
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN - CONTACT FORM -->
+        <aside class="detail-sidebar">
+          <div class="contact-card">
+            <div class="contact-card__header">
+              <span class="contact-card__price">{{ empreendimento.price }}</span>
+              <span class="contact-card__status">{{ empreendimento.status }}</span>
+            </div>
+            
+            <h3>Tenho Interesse</h3>
+            <p>Preencha o formulário e receba mais informações sobre este empreendimento.</p>
+            
+            <form (submit)="onSubmit($event)">
+              <div class="form-group">
+                <input type="text" placeholder="Nome completo" required />
+              </div>
+              <div class="form-group">
+                <input type="email" placeholder="E-mail" required />
+              </div>
+              <div class="form-group">
+                <input type="tel" placeholder="Telefone" required />
+              </div>
+              <div class="form-group">
+                <textarea placeholder="Mensagem (opcional)" rows="3"></textarea>
+              </div>
+              <button type="submit" class="btn btn--primary btn--full">Enviar Mensagem</button>
+            </form>
+
+            <div class="contact-card__phone">
+              <p>Ou ligue para nós:</p>
+              <a href="tel:1130000000">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                </svg>
+                (11) 3000-0000
+              </a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUTROS EMPREENDIMENTOS -->
+  <section class="outros-empreendimentos section">
+    <div class="container">
+      <header class="section-header">
+        <span class="section-tag">Explore mais</span>
+        <h2 class="section-title">Outros Empreendimentos</h2>
+      </header>
+
+      <div class="outros-grid">
+        @for (emp of outrosEmpreendimentos; track emp.id) {
+          <a [routerLink]="['/empreendimentos', emp.slug]" class="outro-card">
+            <div class="outro-card__image">
+              <img [src]="emp.image" [alt]="emp.name" />
+            </div>
+            <div class="outro-card__content">
+              <span class="outro-card__location">{{ emp.location }}</span>
+              <h3 class="outro-card__title">{{ emp.name }}</h3>
+              <span class="outro-card__price">{{ emp.price }}</span>
+            </div>
+          </a>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY MODAL -->
+  @if (showGalleryModal) {
+    <div class="gallery-modal" (click)="closeGallery()">
+      <button class="gallery-modal__close" (click)="closeGallery()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 6L6 18M6 6l12 12"/>
+        </svg>
+      </button>
+      <button class="gallery-modal__nav gallery-modal__nav--prev" (click)="prevImage(); $event.stopPropagation()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M15 18l-6-6 6-6"/>
+        </svg>
+      </button>
+      <div class="gallery-modal__content" (click)="$event.stopPropagation()">
+        <img [src]="empreendimento.gallery[currentImageIndex]" [alt]="empreendimento.name" />
+      </div>
+      <button class="gallery-modal__nav gallery-modal__nav--next" (click)="nextImage(); $event.stopPropagation()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 18l6-6-6-6"/>
+        </svg>
+      </button>
+      <div class="gallery-modal__counter">
+        {{ currentImageIndex + 1 }} / {{ empreendimento.gallery.length }}
+      </div>
+    </div>
+  }
+} @else {
+  <section class="not-found section">
+    <div class="container">
+      <h1>Empreendimento não encontrado</h1>
+      <p>O empreendimento que você está procurando não existe ou foi removido.</p>
+      <a routerLink="/empreendimentos" class="btn btn--primary">Ver todos os empreendimentos</a>
+    </div>
+  </section>
+}

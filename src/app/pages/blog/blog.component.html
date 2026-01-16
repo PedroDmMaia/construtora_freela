@@ -1,0 +1,109 @@
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <span class="page-hero__tag">Conteúdo</span>
+    <h1 class="page-hero__title">Blog</h1>
+    <p class="page-hero__subtitle">
+      Notícias, tendências e dicas sobre o mercado imobiliário e decoração
+    </p>
+  </div>
+</section>
+
+<!-- FEATURED POST -->
+@if (featuredPost) {
+  <section class="featured-post">
+    <div class="container">
+      <a [routerLink]="['/blog', featuredPost.slug]" class="featured-post__card">
+        <div class="featured-post__image">
+          <img [src]="featuredPost.image" [alt]="featuredPost.title" />
+          <span class="featured-post__badge">Destaque</span>
+        </div>
+        <div class="featured-post__content">
+          <span class="featured-post__category">{{ featuredPost.category }}</span>
+          <h2 class="featured-post__title">{{ featuredPost.title }}</h2>
+          <p class="featured-post__excerpt">{{ featuredPost.excerpt }}</p>
+          <div class="featured-post__meta">
+            <img [src]="featuredPost.authorImage" [alt]="featuredPost.author" />
+            <div>
+              <span class="author">{{ featuredPost.author }}</span>
+              <span class="date">{{ featuredPost.date }} · {{ featuredPost.readTime }} de leitura</span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+}
+
+<!-- BLOG POSTS -->
+<section class="blog-posts section">
+  <div class="container">
+    <!-- Categories Filter -->
+    <div class="blog-categories">
+      <button 
+        class="category-btn" 
+        [class.active]="selectedCategory === ''"
+        (click)="filterByCategory('')"
+      >
+        Todos
+      </button>
+      @for (category of categories; track category) {
+        <button 
+          class="category-btn" 
+          [class.active]="selectedCategory === category"
+          (click)="filterByCategory(category)"
+        >
+          {{ category }}
+        </button>
+      }
+    </div>
+
+    <!-- Posts Grid -->
+    <div class="posts-grid">
+      @for (post of filteredPosts; track post.id) {
+        @if (!post.featured || selectedCategory) {
+          <article class="post-card">
+            <a [routerLink]="['/blog', post.slug]" class="post-card__link">
+              <div class="post-card__image">
+                <img [src]="post.image" [alt]="post.title" />
+                <span class="post-card__category">{{ post.category }}</span>
+              </div>
+              <div class="post-card__content">
+                <h3 class="post-card__title">{{ post.title }}</h3>
+                <p class="post-card__excerpt">{{ post.excerpt }}</p>
+                <div class="post-card__meta">
+                  <span class="date">{{ post.date }}</span>
+                  <span class="divider">·</span>
+                  <span class="time">{{ post.readTime }} de leitura</span>
+                </div>
+              </div>
+            </a>
+          </article>
+        }
+      }
+    </div>
+
+    @if (filteredPosts.length === 0 || (filteredPosts.length === 1 && filteredPosts[0].featured && !selectedCategory)) {
+      <div class="no-posts">
+        <p>Nenhum post encontrado nesta categoria.</p>
+        <button class="btn btn--secondary" (click)="filterByCategory('')">Ver todos os posts</button>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+  <div class="container">
+    <div class="newsletter__content">
+      <div class="newsletter__text">
+        <h2>Receba nossas novidades</h2>
+        <p>Cadastre-se e fique por dentro das últimas notícias, lançamentos e tendências do mercado imobiliário.</p>
+      </div>
+      <form class="newsletter__form" (submit)="$event.preventDefault(); subscribeNewsletter()">
+        <input type="email" placeholder="Seu melhor e-mail" required />
+        <button type="submit" class="btn btn--primary">Inscrever</button>
+      </form>
+    </div>
+  </div>
+</section>

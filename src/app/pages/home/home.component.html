@@ -1,0 +1,215 @@
+<!-- HERO SECTION -->
+<section class="hero">
+  <div class="hero__background">
+    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80" alt="Empreendimento de luxo" />
+    <div class="hero__overlay"></div>
+  </div>
+  
+  <div class="hero__content container">
+    <span class="hero__tag">Excelência em cada detalhe</span>
+    <h1 class="hero__title">
+      Transformamos sonhos<br>
+      em <span class="highlight">endereços exclusivos</span>
+    </h1>
+    <p class="hero__subtitle">
+      Há mais de 25 anos construindo empreendimentos de alto padrão<br>
+      nas melhores localizações da cidade
+    </p>
+    <div class="hero__actions">
+      <a routerLink="/empreendimentos" class="btn btn--primary">Ver Empreendimentos</a>
+      <a routerLink="/contato" class="btn btn--outline">Agendar Visita</a>
+    </div>
+  </div>
+
+  <div class="hero__scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- EMPREENDIMENTOS EM DESTAQUE -->
+<section class="empreendimentos section">
+  <div class="container">
+    <header class="section-header">
+      <span class="section-tag">Portfólio</span>
+      <h2 class="section-title">Empreendimentos em Destaque</h2>
+      <p class="section-description">
+        Conheça nossos projetos exclusivos que combinam sofisticação, conforto e as melhores localizações
+      </p>
+    </header>
+
+    <div class="empreendimentos__grid">
+      @for (emp of empreendimentos; track emp.id) {
+        <article class="emp-card" [class.featured]="emp.featured">
+          <div class="emp-card__image">
+            <img [src]="emp.image" [alt]="emp.name" />
+            <div class="emp-card__overlay">
+              <span class="emp-card__status">{{ emp.status }}</span>
+            </div>
+          </div>
+          <div class="emp-card__content">
+            <span class="emp-card__location">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              {{ emp.location }}
+            </span>
+            <h3 class="emp-card__title">{{ emp.name }}</h3>
+            <p class="emp-card__desc">{{ emp.description }}</p>
+            <div class="emp-card__specs">
+              <span>{{ emp.area }}</span>
+              <span>{{ emp.rooms }}</span>
+              <span>{{ emp.suites }}</span>
+            </div>
+            <a [routerLink]="['/empreendimentos', emp.slug]" class="emp-card__link">
+              Saiba mais
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+      }
+    </div>
+
+    <div class="empreendimentos__cta">
+      <a routerLink="/empreendimentos" class="btn btn--secondary">Ver Todos os Empreendimentos</a>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE A EMPRESA -->
+<section class="sobre section">
+  <div class="container">
+    <div class="sobre__grid">
+      <div class="sobre__images">
+        <div class="sobre__image-main">
+          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80" alt="Interior moderno" />
+        </div>
+        <div class="sobre__image-secondary">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Fachada do empreendimento" />
+        </div>
+        <div class="sobre__badge">
+          <span class="badge-number">25+</span>
+          <span class="badge-text">Anos de<br>Excelência</span>
+        </div>
+      </div>
+
+      <div class="sobre__content">
+        <span class="section-tag">Sobre Nós</span>
+        <h2 class="section-title">Tradição em construir<br>com <span class="highlight">excelência</span></h2>
+        <p class="sobre__text">
+          Desde 1999, a Construtora Premium se dedica a criar empreendimentos que 
+          transcendem o conceito de moradia. Cada projeto é pensado para oferecer 
+          uma experiência única de viver.
+        </p>
+        <p class="sobre__text">
+          Nossa equipe de arquitetos, engenheiros e designers trabalha em perfeita 
+          sintonia para entregar não apenas imóveis, mas verdadeiros lares.
+        </p>
+
+        <div class="sobre__stats">
+          <div class="stat">
+            <span class="stat__number">150+</span>
+            <span class="stat__label">Empreendimentos<br>Entregues</span>
+          </div>
+          <div class="stat">
+            <span class="stat__number">8.000+</span>
+            <span class="stat__label">Famílias<br>Felizes</span>
+          </div>
+          <div class="stat">
+            <span class="stat__number">1.2M</span>
+            <span class="stat__label">m² Construídos</span>
+          </div>
+        </div>
+
+        <a routerLink="/sobre" class="btn btn--secondary">Conheça Nossa História</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section class="diferenciais section">
+  <div class="container">
+    <header class="section-header section-header--center">
+      <span class="section-tag">Por que nos escolher</span>
+      <h2 class="section-title">Nossos Diferenciais</h2>
+    </header>
+
+    <div class="diferenciais__grid">
+      @for (diff of diferenciais; track diff.title) {
+        <div class="diff-card">
+          <div class="diff-card__icon">
+            <span [innerHTML]="diff.icon"></span>
+          </div>
+          <h3 class="diff-card__title">{{ diff.title }}</h3>
+          <p class="diff-card__desc">{{ diff.description }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA / EXPERIÊNCIA -->
+<section class="galeria section">
+  <div class="galeria__background">
+    <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=1920&q=80" alt="Interior de luxo" />
+    <div class="galeria__overlay"></div>
+  </div>
+  
+  <div class="galeria__content container">
+    <span class="section-tag section-tag--light">Experiência</span>
+    <h2 class="galeria__title">Viva o extraordinário<br>em cada detalhe</h2>
+    <p class="galeria__text">
+      Cada empreendimento é projetado para proporcionar uma experiência de vida única,
+      com espaços pensados para o seu bem-estar e conforto.
+    </p>
+    <a routerLink="/contato" class="btn btn--light">Agende uma Visita</a>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="depoimentos section">
+  <div class="container">
+    <header class="section-header section-header--center">
+      <span class="section-tag">Depoimentos</span>
+      <h2 class="section-title">O que nossos clientes dizem</h2>
+    </header>
+
+    <div class="depoimentos__slider">
+      @for (dep of depoimentos; track dep.name) {
+        <div class="depo-card">
+          <div class="depo-card__quote">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor" opacity="0.15">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+            </svg>
+          </div>
+          <p class="depo-card__text">{{ dep.text }}</p>
+          <div class="depo-card__author">
+            <img [src]="dep.avatar" [alt]="dep.name" class="depo-card__avatar" />
+            <div class="depo-card__info">
+              <span class="depo-card__name">{{ dep.name }}</span>
+              <span class="depo-card__emp">{{ dep.empreendimento }}</span>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Pronto para encontrar seu novo lar?</h2>
+      <p>Nossa equipe está pronta para ajudá-lo a encontrar o empreendimento perfeito.</p>
+      <div class="cta-actions">
+        <a routerLink="/empreendimentos" class="btn btn--primary">Ver Empreendimentos</a>
+        <a routerLink="/contato" class="btn btn--outline-dark">Fale Conosco</a>
+      </div>
+    </div>
+  </div>
+</section>

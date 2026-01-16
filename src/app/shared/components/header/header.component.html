@@ -1,0 +1,48 @@
+<header class="header" [class.scrolled]="isScrolled">
+  <div class="header__container container">
+    <!-- Logo -->
+    <a routerLink="/" class="header__logo" (click)="closeMenu()">
+      <span class="logo-text">CONSTRUTORA</span>
+      <span class="logo-accent">PREMIUM</span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="header__nav" [class.active]="menuOpen">
+      <ul class="nav__list">
+        <li>
+          <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeMenu()">
+            Início
+          </a>
+        </li>
+        <li>
+          <a routerLink="/empreendimentos" routerLinkActive="active" (click)="closeMenu()">
+            Empreendimentos
+          </a>
+        </li>
+        <li>
+          <a routerLink="/sobre" routerLinkActive="active" (click)="closeMenu()">
+            A Empresa
+          </a>
+        </li>
+        <li>
+          <a routerLink="/blog" routerLinkActive="active" (click)="closeMenu()">
+            Blog
+          </a>
+        </li>
+        <li>
+          <a routerLink="/contato" routerLinkActive="active" (click)="closeMenu()">
+            Contato
+          </a>
+        </li>
+      </ul>
+      <a routerLink="/contato" class="header__cta" (click)="closeMenu()">Fale Conosco</a>
+    </nav>
+
+    <!-- Mobile Menu Button -->
+    <button class="header__menu-btn" (click)="toggleMenu()" [attr.aria-expanded]="menuOpen" aria-label="Menu">
+      <span class="menu-line" [class.active]="menuOpen"></span>
+      <span class="menu-line" [class.active]="menuOpen"></span>
+      <span class="menu-line" [class.active]="menuOpen"></span>
+    </button>
+  </div>
+</header>

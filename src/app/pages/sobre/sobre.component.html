@@ -1,0 +1,241 @@
+<!-- PAGE HERO -->
+<section class="page-hero page-hero--large">
+  <div class="page-hero__background">
+    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80" alt="Edifício moderno" />
+    <div class="page-hero__overlay"></div>
+  </div>
+  <div class="container">
+    <span class="page-hero__tag">Nossa História</span>
+    <h1 class="page-hero__title">A Empresa</h1>
+    <p class="page-hero__subtitle">
+      Há mais de 25 anos construindo sonhos e transformando vidas através de empreendimentos de excelência
+    </p>
+  </div>
+</section>
+
+<!-- ABOUT INTRO -->
+<section class="about-intro section">
+  <div class="container">
+    <div class="about-intro__grid">
+      <div class="about-intro__content">
+        <span class="section-tag">Quem Somos</span>
+        <h2 class="section-title">Uma história de <span class="highlight">excelência</span> e dedicação</h2>
+        <p>
+          Fundada em 1999, a Construtora Premium nasceu com um propósito claro: 
+          revolucionar o mercado imobiliário de alto padrão. Desde então, nos dedicamos 
+          a criar não apenas edifícios, mas verdadeiros lares que transformam a vida de 
+          nossos clientes.
+        </p>
+        <p>
+          Nossa jornada é marcada pela busca incessante pela excelência. Cada projeto 
+          que desenvolvemos reflete nosso compromisso com a qualidade, inovação e 
+          respeito aos mais altos padrões de construção.
+        </p>
+        <p>
+          Com uma equipe de profissionais altamente qualificados, entregamos 
+          empreendimentos que se destacam pela sofisticação, funcionalidade e 
+          valorização contínua.
+        </p>
+      </div>
+      <div class="about-intro__stats">
+        <div class="stat-card">
+          <span class="stat-card__number">25+</span>
+          <span class="stat-card__label">Anos de experiência</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card__number">150+</span>
+          <span class="stat-card__label">Empreendimentos entregues</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card__number">8.000+</span>
+          <span class="stat-card__label">Famílias atendidas</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card__number">1.2M</span>
+          <span class="stat-card__label">m² construídos</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION, VISION, VALUES -->
+<section class="mvv section">
+  <div class="container">
+    <div class="mvv__grid">
+      <div class="mvv__card">
+        <div class="mvv__icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 16l4-4-4-4M8 12h8"/>
+          </svg>
+        </div>
+        <h3>Missão</h3>
+        <p>
+          Construir empreendimentos de alto padrão que superem as expectativas dos 
+          nossos clientes, proporcionando qualidade de vida e valorização patrimonial.
+        </p>
+      </div>
+      <div class="mvv__card">
+        <div class="mvv__icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+        </div>
+        <h3>Visão</h3>
+        <p>
+          Ser reconhecida como a construtora de referência em empreendimentos de 
+          luxo, admirada pela excelência e inovação em cada projeto.
+        </p>
+      </div>
+      <div class="mvv__card">
+        <div class="mvv__icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+        </div>
+        <h3>Valores</h3>
+        <p>
+          Integridade, Excelência, Inovação, Respeito às pessoas e ao meio ambiente, 
+          Compromisso com resultados.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline section">
+  <div class="container">
+    <header class="section-header section-header--center">
+      <span class="section-tag">Nossa Trajetória</span>
+      <h2 class="section-title">Uma História de Conquistas</h2>
+    </header>
+
+    <div class="timeline__wrapper">
+      @for (item of timeline; track item.year) {
+        <div class="timeline__item">
+          <div class="timeline__marker">
+            <span class="timeline__year">{{ item.year }}</span>
+          </div>
+          <div class="timeline__content">
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.description }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="values section">
+  <div class="container">
+    <header class="section-header section-header--center">
+      <span class="section-tag">O que nos guia</span>
+      <h2 class="section-title">Nossos Pilares</h2>
+    </header>
+
+    <div class="values__grid">
+      @for (value of values; track value.title) {
+        <div class="value-card">
+          <div class="value-card__icon" [innerHTML]="value.icon"></div>
+          <h3>{{ value.title }}</h3>
+          <p>{{ value.description }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team section">
+  <div class="container">
+    <header class="section-header section-header--center">
+      <span class="section-tag">Liderança</span>
+      <h2 class="section-title">Nossa Equipe</h2>
+      <p class="section-description" style="margin: 0 auto;">
+        Profissionais experientes e apaixonados pelo que fazem
+      </p>
+    </header>
+
+    <div class="team__grid">
+      @for (member of team; track member.name) {
+        <div class="team-card">
+          <div class="team-card__image">
+            <img [src]="member.image" [alt]="member.name" />
+          </div>
+          <div class="team-card__info">
+            <h3>{{ member.name }}</h3>
+            <span>{{ member.role }}</span>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="certifications section">
+  <div class="container">
+    <div class="certifications__content">
+      <div class="certifications__text">
+        <span class="section-tag">Reconhecimento</span>
+        <h2 class="section-title">Certificações e Prêmios</h2>
+        <p>
+          Nossa excelência é reconhecida pelas principais instituições do setor. 
+          Possuímos certificações que atestam nosso compromisso com qualidade, 
+          sustentabilidade e segurança.
+        </p>
+        <ul class="certifications__list">
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+            ISO 9001 - Gestão de Qualidade
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+            ISO 14001 - Gestão Ambiental
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+            PBQP-H Nível A
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+            Prêmio Master Imobiliário 2024
+          </li>
+        </ul>
+      </div>
+      <div class="certifications__image">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="Empreendimento premiado" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Quer fazer parte dessa história?</h2>
+      <p>Conheça nossos empreendimentos ou junte-se ao nosso time.</p>
+      <div class="cta-actions">
+        <a routerLink="/empreendimentos" class="btn btn--light">Ver Empreendimentos</a>
+        <a routerLink="/trabalhe-conosco" class="btn btn--outline-dark">Trabalhe Conosco</a>
+      </div>
+    </div>
+  </div>
+</section>
