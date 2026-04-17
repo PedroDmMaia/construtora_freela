@@ -17,16 +17,16 @@ export class ContatoComponent {
     name: '',
     email: '',
     phone: '',
-    empreendimento: '',
+    servico: '',
     subject: '',
     message: ''
   };
 
   subjects = [
-    'Informações sobre empreendimento',
-    'Agendamento de visita',
-    'Proposta comercial',
-    'Pós-venda',
+    'Orçamento / proposta',
+    'Visita ao canteiro ou trecho',
+    'Execução de obra em andamento',
+    'Fornecedores e parcerias',
     'Outros assuntos'
   ];
 
@@ -42,7 +42,7 @@ export class ContatoComponent {
       name: '',
       email: '',
       phone: '',
-      empreendimento: '',
+      servico: '',
       subject: '',
       message: ''
     };

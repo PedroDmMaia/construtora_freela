@@ -20,7 +20,7 @@ export class EmpreendimentosComponent {
     neighborhood: ''
   };
 
-  neighborhoods = [...new Set(EMPREENDIMENTOS.map(e => e.neighborhood))];
+  neighborhoods = [...new Set(EMPREENDIMENTOS.map(e => e.neighborhood).filter(n => !!n?.trim()))];
   statuses = [...new Set(EMPREENDIMENTOS.map(e => e.status))];
 
   applyFilters() {

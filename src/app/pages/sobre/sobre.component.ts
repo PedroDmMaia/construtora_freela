@@ -32,18 +32,18 @@ export class SobreComponent {
   private sanitizer = inject(DomSanitizer);
 
   timeline: TimelineItem[] = [
-    { year: '1999', title: 'Fundação', description: 'A Construtora Premium nasce com a missão de transformar o mercado imobiliário de alto padrão.' },
-    { year: '2005', title: 'Expansão', description: 'Alcançamos a marca de 20 empreendimentos entregues e expandimos nossa atuação.' },
-    { year: '2012', title: 'Reconhecimento', description: 'Recebemos o prêmio de melhor construtora da região pelo 5º ano consecutivo.' },
-    { year: '2018', title: 'Inovação', description: 'Implementamos práticas sustentáveis em todos os nossos projetos.' },
-    { year: '2024', title: 'Liderança', description: 'Consolidamos nossa posição como líder em empreendimentos de luxo.' }
+    { year: '1999', title: 'Fundação', description: 'Início da operação em obras de terraplenagem, redes e pequenos trechos de pavimentação.' },
+    { year: '2005', title: 'Expansão', description: 'Ampliamos a frota de máquinas e passamos a atender contratos maiores em pavimentação e redes.' },
+    { year: '2012', title: 'Reconhecimento', description: 'Certificações de qualidade e ampliação de carteira com prefeituras e concessionárias.' },
+    { year: '2018', title: 'Sustentabilidade', description: 'Controles mais rigorosos em obras próximas a cursos d\'água e destinação correta de resíduos de escavação.' },
+    { year: '2024', title: 'Infraestrutura', description: 'Reforçamos atuação em obras de saneamento, vias e fechamento de canteiros com padrão corporativo.' }
   ];
 
   team: TeamMember[] = [
-    { name: 'Carlos Eduardo Silva', role: 'CEO & Fundador', image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80' },
-    { name: 'Ana Maria Santos', role: 'Diretora de Projetos', image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80' },
-    { name: 'Roberto Oliveira', role: 'Diretor de Engenharia', image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80' },
-    { name: 'Mariana Costa', role: 'Diretora Comercial', image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80' }
+    { name: 'Carlos Eduardo Silva', role: 'CEO & Fundador', image: '/18.jpeg' },
+    { name: 'Ana Maria Santos', role: 'Diretora de Projetos', image: '/18.jpeg' },
+    { name: 'Roberto Oliveira', role: 'Diretor de Engenharia', image: '/18.jpeg' },
+    { name: 'Mariana Costa', role: 'Diretora Comercial', image: '/18.jpeg' }
   ];
 
   values: Value[] = [];
@@ -62,7 +62,7 @@ export class SobreComponent {
 
     const data = [
       { title: 'Integridade', description: 'Agimos com ética e transparência em todas as nossas relações.' },
-      { title: 'Excelência', description: 'Buscamos a perfeição em cada detalhe dos nossos projetos.' },
+      { title: 'Excelência', description: 'Do traço na vala ao acabamento no asfalto, padrão técnico em toda obra.' },
       { title: 'Pessoas', description: 'Valorizamos nossos colaboradores, clientes e parceiros.' },
       { title: 'Compromisso', description: 'Cumprimos prazos e entregamos o que prometemos.' }
     ];

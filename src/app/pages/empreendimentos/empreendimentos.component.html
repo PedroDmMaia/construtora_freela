@@ -1,10 +1,10 @@
 <!-- PAGE HERO -->
 <section class="page-hero">
   <div class="container">
-    <span class="page-hero__tag">Nosso Portfólio</span>
-    <h1 class="page-hero__title">Empreendimentos</h1>
+    <span class="page-hero__tag">Portfólio</span>
+    <h1 class="page-hero__title">Serviços</h1>
     <p class="page-hero__subtitle">
-      Descubra nossos projetos exclusivos nas melhores localizações de São Paulo
+      Asfalto, redes de esgoto, alvenaria e fechamento de canteiro — o que a Construtora Civil executa em campo
     </p>
   </div>
 </section>
@@ -22,15 +22,17 @@
           }
         </select>
       </div>
-      <div class="filter-group">
-        <label>Bairro</label>
-        <select [(ngModel)]="filters.neighborhood" (change)="applyFilters()">
-          <option value="">Todos os bairros</option>
-          @for (neighborhood of neighborhoods; track neighborhood) {
-            <option [value]="neighborhood">{{ neighborhood }}</option>
-          }
-        </select>
-      </div>
+      @if (neighborhoods.length > 0) {
+        <div class="filter-group">
+          <label>Região</label>
+          <select [(ngModel)]="filters.neighborhood" (change)="applyFilters()">
+            <option value="">Todas</option>
+            @for (neighborhood of neighborhoods; track neighborhood) {
+              <option [value]="neighborhood">{{ neighborhood }}</option>
+            }
+          </select>
+        </div>
+      }
       <button class="filter-clear" (click)="clearFilters()">
         Limpar filtros
       </button>
@@ -42,7 +44,7 @@
 <section class="empreendimentos-list section">
   <div class="container">
     <div class="results-count">
-      <p>{{ filteredEmpreendimentos.length }} empreendimento(s) encontrado(s)</p>
+      <p>{{ filteredEmpreendimentos.length }} serviço(s) na listagem</p>
     </div>
 
     <div class="empreendimentos-grid">
@@ -68,18 +70,11 @@
               <h3 class="emp-card__title">{{ emp.name }}</h3>
               <p class="emp-card__desc">{{ emp.description }}</p>
               <div class="emp-card__specs">
-                <div class="spec">
-                  <span class="spec-label">Área</span>
-                  <span class="spec-value">{{ emp.area }}</span>
-                </div>
-                <div class="spec">
-                  <span class="spec-label">Quartos</span>
-                  <span class="spec-value">{{ emp.rooms }}</span>
-                </div>
-                <div class="spec">
-                  <span class="spec-label">Suítes</span>
-                  <span class="spec-value">{{ emp.suites }}</span>
-                </div>
+                @for (tag of emp.amenities.slice(0, 3); track tag) {
+                  <div class="spec">
+                    <span class="spec-value">{{ tag }}</span>
+                  </div>
+                }
               </div>
               <div class="emp-card__footer">
                 <span class="emp-card__price">{{ emp.price }}</span>
@@ -102,8 +97,8 @@
           <circle cx="11" cy="11" r="8"/>
           <path d="M21 21l-4.35-4.35"/>
         </svg>
-        <h3>Nenhum empreendimento encontrado</h3>
-        <p>Tente ajustar os filtros para ver mais resultados.</p>
+        <h3>Nenhum serviço encontrado</h3>
+        <p>Tente limpar os filtros ou entre em contato para obras sob medida.</p>
         <button class="btn btn--secondary" (click)="clearFilters()">Limpar filtros</button>
       </div>
     }
@@ -114,8 +109,8 @@
 <section class="cta-section">
   <div class="container">
     <div class="cta-content">
-      <h2>Não encontrou o que procura?</h2>
-      <p>Entre em contato e nossa equipe irá ajudá-lo a encontrar o imóvel ideal.</p>
+      <h2>Precisa de outro tipo de obra?</h2>
+      <p>Fale com a equipe — avaliamos projetos de infraestrutura e reforma em vias e canteiros.</p>
       <a routerLink="/contato" class="btn btn--light">Fale Conosco</a>
     </div>
   </div>

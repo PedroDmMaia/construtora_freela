@@ -13,7 +13,7 @@ interface Diferencial {
 interface Depoimento {
   name: string;
   text: string;
-  empreendimento: string;
+  contexto: string;
   avatar: string;
 }
 
@@ -33,21 +33,21 @@ export class HomeComponent {
   depoimentos: Depoimento[] = [
     {
       name: 'Fernanda Oliveira',
-      text: 'A Construtora Premium superou todas as nossas expectativas. O apartamento foi entregue impecável, com acabamentos de primeira qualidade. A equipe foi atenciosa durante todo o processo.',
-      empreendimento: 'Reserva Jardins',
-      avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop'
+      text: 'A pavimentação da rua do nosso bairro ficou impecável. A equipe sinalizou bem a obra, respondeu rápido às dúvidas da comunidade e entregou no prazo combinado com a prefeitura.',
+      contexto: 'Asfalto — loteamento',
+      avatar: '/18.jpeg'
     },
     {
       name: 'Ricardo Mendes',
-      text: 'Investir em um empreendimento da Construtora Premium foi a melhor decisão. Além da valorização do imóvel, a qualidade de vida que ganhamos não tem preço.',
-      empreendimento: 'Vista Paulista',
-      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop'
+      text: 'Contratamos a abertura de vala e a implantação da rede de esgoto com recomposição do asfalto. Tudo executado com máquina e equipe próprias; relatório e fotos em cada etapa.',
+      contexto: 'Rede de esgoto',
+      avatar: '/18.jpeg'
     },
     {
       name: 'Ana Paula Santos',
-      text: 'Do primeiro contato até a entrega das chaves, tudo foi perfeito. A transparência e o profissionalismo da equipe fizeram toda a diferença. Recomendo de olhos fechados!',
-      empreendimento: 'Parque das Artes',
-      avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop'
+      text: 'Precisávamos fechar o canteiro com tapume e posicionar os containers. O munck desembarcou certinho, sem ruído com a vizinhança. Profissionais de verdade.',
+      contexto: 'Fechamento de canteiro',
+      avatar: '/18.jpeg'
     }
   ];
 
@@ -66,12 +66,12 @@ export class HomeComponent {
     ];
 
     const data = [
-      { title: 'Garantia de Qualidade', description: 'Compromisso com os mais altos padrões de construção, materiais premium e acabamentos impecáveis.' },
-      { title: 'Localizações Premium', description: 'Empreendimentos estrategicamente posicionados nas melhores regiões da cidade.' },
-      { title: 'Pontualidade na Entrega', description: 'Histórico impecável de entregas no prazo, respeitando o cronograma acordado.' },
-      { title: 'Atendimento Personalizado', description: 'Equipe dedicada para acompanhar cada cliente desde a escolha até a entrega.' },
-      { title: 'Design Exclusivo', description: 'Projetos assinados por renomados arquitetos, combinando estética e funcionalidade.' },
-      { title: 'Sustentabilidade', description: 'Práticas sustentáveis em todas as etapas, pensando no futuro do planeta.' }
+      { title: 'Qualidade de execução', description: 'Controle de materiais, dosagem em pavimentação e acabamento de valas e pavimento conforme especificação técnica.' },
+      { title: 'Máquinas e frota', description: 'Retroescavadeira, caminhão basculante, munck e equipamentos de compactação para agilizar o serviço com segurança.' },
+      { title: 'Prazo e cronograma', description: 'Planejamento de frentes de trabalho e cumprimento do que foi acordado com o contratante e fiscalização.' },
+      { title: 'Segurança e NR', description: 'EPI para todos, isolamento de áreas e CIPA quando aplicável — obra organizada é obra segura.' },
+      { title: 'Meio ambiente', description: 'Contenção de sedimentos perto de cursos d\'água e retirada responsável de resíduos de escavação.' },
+      { title: 'Transparência', description: 'Alinhamento frequente com a contratante, medição e relatórios do avanço físico da obra.' }
     ];
 
     this.diferenciais = data.map((item, index) => ({

@@ -1,23 +1,23 @@
 <!-- HERO SECTION -->
 <section class="hero">
   <div class="hero__background">
-    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80" alt="Empreendimento de luxo" />
+    <img src="/5.jpeg" alt="Vala para rede de esgoto" />
     <div class="hero__overlay"></div>
   </div>
   
   <div class="hero__content container">
-    <span class="hero__tag">Excelência em cada detalhe</span>
+    <span class="hero__tag">Obra civil e infraestrutura</span>
     <h1 class="hero__title">
-      Transformamos sonhos<br>
-      em <span class="highlight">endereços exclusivos</span>
+      Solidez em obra.<br>
+      <span class="highlight">Resultado em campo</span>
     </h1>
     <p class="hero__subtitle">
-      Há mais de 25 anos construindo empreendimentos de alto padrão<br>
-      nas melhores localizações da cidade
+      Asfalto, redes de esgoto, alvenaria e fechamento de canteiro —<br>
+      com equipe, máquinas e foco em segurança e prazo
     </p>
     <div class="hero__actions">
-      <a routerLink="/empreendimentos" class="btn btn--primary">Ver Empreendimentos</a>
-      <a routerLink="/contato" class="btn btn--outline">Agendar Visita</a>
+      <a routerLink="/empreendimentos" class="btn btn--primary">Ver serviços</a>
+      <a routerLink="/contato" class="btn btn--outline">Solicitar orçamento</a>
     </div>
   </div>
 
@@ -27,14 +27,14 @@
   </div>
 </section>
 
-<!-- EMPREENDIMENTOS EM DESTAQUE -->
+<!-- SERVIÇOS EM DESTAQUE -->
 <section class="empreendimentos section">
   <div class="container">
     <header class="section-header">
-      <span class="section-tag">Portfólio</span>
-      <h2 class="section-title">Empreendimentos em Destaque</h2>
+      <span class="section-tag">O que fazemos</span>
+      <h2 class="section-title">Serviços em destaque</h2>
       <p class="section-description">
-        Conheça nossos projetos exclusivos que combinam sofisticação, conforto e as melhores localizações
+        Linhas de atuação da nossa obra civil: da pavimentação ao fechamento do canteiro
       </p>
     </header>
 
@@ -58,9 +58,9 @@
             <h3 class="emp-card__title">{{ emp.name }}</h3>
             <p class="emp-card__desc">{{ emp.description }}</p>
             <div class="emp-card__specs">
-              <span>{{ emp.area }}</span>
-              <span>{{ emp.rooms }}</span>
-              <span>{{ emp.suites }}</span>
+              @for (tag of emp.amenities.slice(0, 3); track tag) {
+                <span>{{ tag }}</span>
+              }
             </div>
             <a [routerLink]="['/empreendimentos', emp.slug]" class="emp-card__link">
               Saiba mais
@@ -74,7 +74,7 @@
     </div>
 
     <div class="empreendimentos__cta">
-      <a routerLink="/empreendimentos" class="btn btn--secondary">Ver Todos os Empreendimentos</a>
+      <a routerLink="/empreendimentos" class="btn btn--secondary">Ver todos os serviços</a>
     </div>
   </div>
 </section>
@@ -85,42 +85,41 @@
     <div class="sobre__grid">
       <div class="sobre__images">
         <div class="sobre__image-main">
-          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80" alt="Interior moderno" />
+          <img src="/9.jpeg" alt="Retroescavadeira em obra de rede de esgoto" />
         </div>
         <div class="sobre__image-secondary">
-          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Fachada do empreendimento" />
+          <img src="/10.jpeg" alt="Pilares de concreto com ferragem" />
         </div>
         <div class="sobre__badge">
           <span class="badge-number">25+</span>
-          <span class="badge-text">Anos de<br>Excelência</span>
+          <span class="badge-text">Anos em<br>obra civil</span>
         </div>
       </div>
 
       <div class="sobre__content">
         <span class="section-tag">Sobre Nós</span>
-        <h2 class="section-title">Tradição em construir<br>com <span class="highlight">excelência</span></h2>
+        <h2 class="section-title">Tradição em obra<br><span class="highlight">civil e infraestrutura</span></h2>
         <p class="sobre__text">
-          Desde 1999, a Construtora Premium se dedica a criar empreendimentos que 
-          transcendem o conceito de moradia. Cada projeto é pensado para oferecer 
-          uma experiência única de viver.
+          Atuamos com foco em execução de campo: vias asfaltadas, implantação de redes de esgoto,
+          estruturas de alvenaria e fechamento seguro de canteiro com tapume e containers.
         </p>
         <p class="sobre__text">
-          Nossa equipe de arquitetos, engenheiros e designers trabalha em perfeita 
-          sintonia para entregar não apenas imóveis, mas verdadeiros lares.
+          Engenheiros, mestres de obras e operadores trabalham integrados, com EPI, máquinas
+          adequadas e respeito às normas de segurança e ao meio ambiente.
         </p>
 
         <div class="sobre__stats">
           <div class="stat">
             <span class="stat__number">150+</span>
-            <span class="stat__label">Empreendimentos<br>Entregues</span>
+            <span class="stat__label">Obras e trechos<br>entregues</span>
           </div>
           <div class="stat">
-            <span class="stat__number">8.000+</span>
-            <span class="stat__label">Famílias<br>Felizes</span>
+            <span class="stat__number">25+</span>
+            <span class="stat__label">Anos em<br>serviço</span>
           </div>
           <div class="stat">
             <span class="stat__number">1.2M</span>
-            <span class="stat__label">m² Construídos</span>
+            <span class="stat__label">m² em projetos<br>de infraestrutura</span>
           </div>
         </div>
 
@@ -155,18 +154,18 @@
 <!-- GALERIA / EXPERIÊNCIA -->
 <section class="galeria section">
   <div class="galeria__background">
-    <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=1920&q=80" alt="Interior de luxo" />
+    <img src="/21.jpeg" alt="Içamento de container para fechamento de canteiro" />
     <div class="galeria__overlay"></div>
   </div>
   
   <div class="galeria__content container">
-    <span class="section-tag section-tag--light">Experiência</span>
-    <h2 class="galeria__title">Viva o extraordinário<br>em cada detalhe</h2>
+    <span class="section-tag section-tag--light">Segurança no canteiro</span>
+    <h2 class="galeria__title">Fechamento e logística<br>que protegem a obra</h2>
     <p class="galeria__text">
-      Cada empreendimento é projetado para proporcionar uma experiência de vida única,
-      com espaços pensados para o seu bem-estar e conforto.
+      Tapumes, containers e içamento com munck fazem parte do nosso padrão para isolar o canteiro,
+      organizar acesso e cumprir exigências de fiscalização.
     </p>
-    <a routerLink="/contato" class="btn btn--light">Agende uma Visita</a>
+    <a routerLink="/contato" class="btn btn--light">Falar com a equipe</a>
   </div>
 </section>
 
@@ -191,7 +190,7 @@
             <img [src]="dep.avatar" [alt]="dep.name" class="depo-card__avatar" />
             <div class="depo-card__info">
               <span class="depo-card__name">{{ dep.name }}</span>
-              <span class="depo-card__emp">{{ dep.empreendimento }}</span>
+              <span class="depo-card__emp">{{ dep.contexto }}</span>
             </div>
           </div>
         </div>
@@ -204,10 +203,10 @@
 <section class="cta-section">
   <div class="container">
     <div class="cta-content">
-      <h2>Pronto para encontrar seu novo lar?</h2>
-      <p>Nossa equipe está pronta para ajudá-lo a encontrar o empreendimento perfeito.</p>
+      <h2>Pronto para tirar seu projeto do papel?</h2>
+      <p>Descreva a obra e nossa equipe retorna com proposta e próximos passos.</p>
       <div class="cta-actions">
-        <a routerLink="/empreendimentos" class="btn btn--primary">Ver Empreendimentos</a>
+        <a routerLink="/empreendimentos" class="btn btn--primary">Ver serviços</a>
         <a routerLink="/contato" class="btn btn--outline-dark">Fale Conosco</a>
       </div>
     </div>

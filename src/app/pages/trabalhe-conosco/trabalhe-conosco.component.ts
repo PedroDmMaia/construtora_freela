@@ -31,43 +31,43 @@ export class TrabalheConoscoComponent {
   vagas: Vaga[] = [
     {
       id: 1,
-      title: 'Engenheiro Civil Sênior',
-      department: 'Engenharia',
+      title: 'Engenheiro(a) civil de campo',
+      department: 'Obra',
       location: 'São Paulo, SP',
       type: 'CLT',
-      description: 'Responsável pela gestão técnica de obras de alto padrão, liderança de equipes e garantia da qualidade dos projetos.'
+      description: 'Fiscalização de frentes de pavimentação e redes, medição, interface com contratante e cumprimento de ART quando aplicável.'
     },
     {
       id: 2,
-      title: 'Arquiteto de Projetos',
-      department: 'Arquitetura',
+      title: 'Mestre de obras',
+      department: 'Obra',
       location: 'São Paulo, SP',
       type: 'CLT',
-      description: 'Desenvolvimento de projetos arquitetônicos inovadores, acompanhamento de obras e interface com clientes.'
+      description: 'Liderança da equipe de serventes e operadores, leitura de projeto, controle de cronograma diário e qualidade do serviço.'
     },
     {
       id: 3,
-      title: 'Consultor de Vendas',
-      department: 'Comercial',
+      title: 'Operador de retroescavadeira',
+      department: 'Máquinas',
       location: 'São Paulo, SP',
       type: 'CLT',
-      description: 'Atendimento consultivo a clientes de alto padrão, apresentação de empreendimentos e fechamento de negócios.'
+      description: 'Abertura de valas, carregamento de caminhão basculante e movimentação de solo em obras de saneamento e terraplenagem.'
     },
     {
       id: 4,
-      title: 'Analista de Marketing Digital',
-      department: 'Marketing',
-      location: 'São Paulo, SP (Híbrido)',
-      type: 'CLT',
-      description: 'Gestão de campanhas digitais, produção de conteúdo e análise de performance para empreendimentos imobiliários.'
-    },
-    {
-      id: 5,
-      title: 'Coordenador de Obras',
+      title: 'Técnico(a) em edificações / orçamentos',
       department: 'Engenharia',
       location: 'São Paulo, SP',
       type: 'CLT',
-      description: 'Coordenação de múltiplos canteiros de obras, gestão de cronogramas e relacionamento com fornecedores.'
+      description: 'Levantamento em campo, quantitativos, apoio a propostas comerciais e planilhas de serviço.'
+    },
+    {
+      id: 5,
+      title: 'Encarregado de logística de canteiro',
+      department: 'Suprimentos',
+      location: 'São Paulo, SP',
+      type: 'CLT',
+      description: 'Recebimento de materiais, organização de estoque temporário e apoio ao içamento de containers e chapas de tapume.'
     }
   ];
 
@@ -91,12 +91,12 @@ export class TrabalheConoscoComponent {
     ];
 
     const data = [
-      { title: 'Plano de Saúde', description: 'Cobertura completa para você e sua família' },
-      { title: 'Desenvolvimento', description: 'Programas de capacitação e crescimento profissional' },
-      { title: 'Ambiente Inspirador', description: 'Escritório moderno e equipe colaborativa' },
-      { title: 'Home Office', description: 'Flexibilidade para trabalho remoto quando possível' },
-      { title: 'Férias Flexíveis', description: 'Política de férias que respeita seu bem-estar' },
-      { title: 'Seguro de Vida', description: 'Proteção e tranquilidade para você e sua família' }
+      { title: 'EPI completo', description: 'Fornecimento conforme função e NR aplicável à obra.' },
+      { title: 'Treinamentos', description: 'Integração e reciclagem em segurança do trabalho e procedimentos de campo.' },
+      { title: 'Vale refeição / alimentação', description: 'Conforme política interna e sindicato da categoria, quando aplicável.' },
+      { title: 'Transporte', description: 'Apoio logístico em obras em regiões atendidas pela empresa, quando contratado.' },
+      { title: 'PISO da construção', description: 'Respeito às convenções da categoria em salário base.' },
+      { title: 'Seguro e ambiente seguro', description: 'Seguro de vida coletivo em apólice vigente e cultura de reportar riscos no canteiro.' }
     ];
 
     this.beneficios = data.map((item, index) => ({

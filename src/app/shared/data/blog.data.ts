@@ -17,19 +17,19 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     id: 1,
     slug: 'tendencias-arquitetura-2026',
-    title: 'Tendências de Arquitetura para 2026: O Futuro do Morar',
-    excerpt: 'Descubra as principais tendências de arquitetura que estão moldando os novos empreendimentos e como elas impactam a qualidade de vida.',
-    content: `A arquitetura residencial está em constante evolução, e 2026 promete ser um ano marcante para o setor. As tendências apontam para espaços mais integrados, sustentáveis e tecnológicos.
+    title: 'O que muda na obra civil em 2026: normas, materiais e planejamento',
+    excerpt: 'Checklist para quem fecha contrato de infraestrutura: NR, condicionantes ambientais e controle de qualidade em pavimentação e redes.',
+    content: `O setor de construção pesada continua evoluindo com foco em segurança do trabalho, rastreabilidade de materiais e digitalização de medições.
 
-Entre as principais tendências, destacam-se os espaços multifuncionais, que permitem adaptar os ambientes às diferentes necessidades do dia a dia. O home office, que se consolidou nos últimos anos, agora ganha espaços próprios e bem planejados.
+As obras de saneamento e pavimentação passam a exigir mais fotos de etapa, cadastro de resíduos de escavação e relatórios de compactação quando o contratante exige PBQP-H ou aderência a manuais municipais.
 
-A sustentabilidade também é protagonista, com sistemas de captação de água da chuva, painéis solares integrados às fachadas e materiais de construção ecológicos se tornando padrão em empreendimentos de alto padrão.
+Em valas para rede de esgoto, o monitoramento da lastragem e do assentamento de tubos ganha importância em fiscalizações. Já no asfalto, a temperatura de aplicação e a taxa de compactação continuam sendo pontos críticos para evitar trincas precoces.
 
-A tecnologia smart home deixou de ser um diferencial para se tornar essencial. Automação de iluminação, climatização, segurança e entretenimento são apenas o básico. Os novos projetos já contemplam infraestrutura para as tecnologias do futuro.`,
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80',
-    category: 'Arquitetura',
+Para o gestor público ou contratante privado, vale alinhar cronograma com a disponibilidade de máquinas e equipe fixa — gargalo comum em obras de vias.`,
+    image: '/12.jpeg',
+    category: 'Obra civil',
     author: 'Ana Beatriz Costa',
-    authorImage: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80',
+    authorImage: '/18.jpeg',
     date: '15 Jan 2026',
     readTime: '5 min',
     featured: true
@@ -37,19 +37,19 @@ A tecnologia smart home deixou de ser um diferencial para se tornar essencial. A
   {
     id: 2,
     slug: 'investir-imoveis-alto-padrao',
-    title: 'Por Que Investir em Imóveis de Alto Padrão é uma Decisão Inteligente',
-    excerpt: 'Análise completa sobre os benefícios de investir em imóveis de luxo e como escolher o melhor empreendimento.',
-    content: `O mercado imobiliário de alto padrão continua sendo uma das opções mais seguras e rentáveis para investidores. Com valorização consistente e demanda estável, os imóveis de luxo oferecem benefícios únicos.
+    title: 'Como avaliar um contratante antes de fechar obra de infraestrutura',
+    excerpt: 'Da documentação da máquina ao histórico em obras semelhantes: critérios práticos para escolher quem vai para o campo.',
+    content: `Contratos de terraplenagem, rede de esgoto ou pavimentação exigem análise diferente da compra de imóvel. O que pesa é capacidade operacional real.
 
-A localização premium, acabamentos de primeira linha e infraestrutura completa são fatores que garantem não apenas qualidade de vida, mas também valorização contínua do patrimônio.
+Pergunte sobre registro em conselhos, ART quando aplicável, equipe própria x subempreiteiros e frota disponível nas datas do cronograma. Em licitações, confira edital contra a proposta técnica que sua empresa consegue cumprir.
 
-Diferente de outras opções de investimento, imóveis de alto padrão são menos suscetíveis a oscilações de mercado, mantendo seu valor mesmo em períodos de instabilidade econômica.
+Garantia e pós-obra devem estar claras: prazo de recôncavo, responsabilidade por infiltração em trechos de tubulação e reparo de pavimento após vala.
 
-Ao escolher um empreendimento, é fundamental avaliar a reputação da construtora, a localização, as características do projeto e o potencial de valorização da região.`,
-    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80',
-    category: 'Investimentos',
+Comparar sempre três cenários: preço, prazo e escopo — não só o menor valor por metro linear ou por tonelada de asfalto.`,
+    image: '/6.jpeg',
+    category: 'Gestão de obra',
     author: 'Carlos Eduardo Silva',
-    authorImage: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&q=80',
+    authorImage: '/18.jpeg',
     date: '10 Jan 2026',
     readTime: '7 min',
     featured: false
@@ -57,19 +57,19 @@ Ao escolher um empreendimento, é fundamental avaliar a reputação da construto
   {
     id: 3,
     slug: 'sustentabilidade-construcao-civil',
-    title: 'Sustentabilidade na Construção Civil: Nosso Compromisso com o Futuro',
-    excerpt: 'Conheça as práticas sustentáveis adotadas em nossos empreendimentos e como contribuímos para um futuro mais verde.',
-    content: `A sustentabilidade deixou de ser uma tendência para se tornar uma necessidade. Na Construtora Premium, incorporamos práticas sustentáveis em todas as etapas de nossos projetos.
+    title: 'Sustentabilidade em valas e pavimentação: lama, reuso e erosão',
+    excerpt: 'Como reduzir impacto em obras de saneamento próximas a rios e córregos sem perder produtividade.',
+    content: `Escavação mecanizada gera volume alto de material úmido. O destino correto em CTR evita multas e conflito com a comunidade.
 
-Desde a escolha de materiais certificados até a implementação de sistemas de economia de energia e água, cada detalhe é pensado para minimizar o impacto ambiental.
+Em trechos marginais, barreiras de sedimentos e bombeamento controlado ajudam a preservar leito. Após a instalação da tubulação, a recomposição do pavimento e o paisagismo mínimo (quando exigido) fecham o processo junto ao órgão ambiental.
 
-Nossos empreendimentos contam com certificações ambientais reconhecidas internacionalmente, garantindo que os moradores vivam em harmonia com o meio ambiente.
+Economia circular aparece no reuso de sub-base quando a geotecnia permite — sempre com ensaio. Na pavimentação, evitar refugo de CBUQ mal armazenado é competência de canteiro organizado.
 
-Além dos benefícios ambientais, a sustentabilidade também representa economia para os moradores, com redução significativa nas contas de água e energia.`,
-    image: 'https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=1200&q=80',
-    category: 'Sustentabilidade',
+A sustentabilidade, aqui, é operações limpas e documentadas — não só marketing.`,
+    image: '/4.jpeg',
+    category: 'Meio ambiente',
     author: 'Mariana Costa',
-    authorImage: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&q=80',
+    authorImage: '/18.jpeg',
     date: '05 Jan 2026',
     readTime: '6 min',
     featured: false
@@ -77,19 +77,19 @@ Além dos benefícios ambientais, a sustentabilidade também representa economia
   {
     id: 4,
     slug: 'decoracao-apartamentos-luxo',
-    title: 'Dicas de Decoração para Apartamentos de Luxo',
-    excerpt: 'Inspirações e dicas de profissionais para decorar seu apartamento de alto padrão com elegância e personalidade.',
-    content: `Decorar um apartamento de luxo é uma oportunidade de expressar personalidade e criar ambientes únicos. Confira dicas de especialistas para transformar seu espaço.
+    title: 'Segurança no canteiro: EPI, isolamento e comunicação com moradores',
+    excerpt: 'Checklist rápido para fechamento de rua, sinalização de vala e incidência sonora em obras urbanas.',
+    content: `Tapume bem instalado não é estética — é NR-18 e convivência. Chapas alinhadas, acesso para pedestres e rotas alternativas sinalizadas evitam acidente e conversas difíceis na portaria.
 
-A escolha de materiais nobres é fundamental. Mármores, madeiras naturais e metais de acabamento dourado ou cromado elevam qualquer ambiente.
+Em retroescavadeira abrindo vala, fita zebrada à noite e iluminação portátil são essenciais. Para moradores, aviso com data de impacto e canal WhatsApp da obra reduzem ruído social.
 
-A iluminação é outro elemento crucial. Luminárias de design, spots direcionáveis e pendentes statement são essenciais para criar atmosferas diferenciadas.
+Martelete e compactador pedem turnos combinados com a fiscalização e, quando possível, horários menos sensíveis.
 
-Móveis de design assinado e obras de arte são investimentos que valorizam o imóvel e criam ambientes sofisticados. A chave é equilibrar peças statement com elementos mais neutros.`,
-    image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80',
-    category: 'Decoração',
+Lembre-se: obra segura é obra que termina sem incidente grave na vizinhança.`,
+    image: '/25.jpeg',
+    category: 'Segurança',
     author: 'Patricia Almeida',
-    authorImage: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&q=80',
+    authorImage: '/18.jpeg',
     date: '28 Dez 2025',
     readTime: '4 min',
     featured: false
@@ -97,19 +97,19 @@ Móveis de design assinado e obras de arte são investimentos que valorizam o im
   {
     id: 5,
     slug: 'lancamento-terraco-ibirapuera',
-    title: 'Terraço Ibirapuera: Nosso Mais Novo Lançamento',
-    excerpt: 'Conheça o Terraço Ibirapuera, nosso empreendimento mais exclusivo com vista permanente para o parque.',
-    content: `É com grande orgulho que apresentamos o Terraço Ibirapuera, nosso empreendimento mais exclusivo até o momento.
+    title: 'Fechamento de canteiro: containers, munck e tempo de montagem',
+    excerpt: 'Da logística do içamento ao posicionamento dos módulos — o que define o sucesso do cercamento.',
+    content: `O fechamento com containers e tapume exige estudo de carga, raio do guindaste e resistência do solo onde a máquina apoia. Caminhão munck posicionado errado atrasa o dia inteiro.
 
-Localizado em Moema, com vista permanente para o Parque Ibirapuera, o Terraço oferece uma experiência de moradia incomparável. São apenas 20 unidades, garantindo exclusividade absoluta.
+Chapas de zinco ou metálicas precisam de painéis alinhados e aterramento quando houver quadro elétrico no módulo. Acesso de caminhões e pipa deve entrar no desenho antes da ordem de serviço.
 
-O projeto arquitetônico, assinado por um renomado escritório, prioriza a integração com a paisagem e a entrada de luz natural. Cada unidade possui amplos terraços que funcionam como extensão das áreas sociais.
+Após a montagem, o canteiro ganha barreira física contra invasão e melhor controle de entrada de pessoal e materiais.
 
-A infraestrutura inclui serviços de concierge 24h, spa exclusivo, piscina com borda infinita e heliponto. Uma nova definição de luxo residencial em São Paulo.`,
-    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80',
-    category: 'Lançamentos',
+Planejar içamento em dia de baixo tráfego ajuda a cidade e a equipe.`,
+    image: '/23.jpeg',
+    category: 'Canteiro',
     author: 'Roberto Oliveira',
-    authorImage: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80',
+    authorImage: '/18.jpeg',
     date: '20 Dez 2025',
     readTime: '5 min',
     featured: false
@@ -117,21 +117,19 @@ A infraestrutura inclui serviços de concierge 24h, spa exclusivo, piscina com b
   {
     id: 6,
     slug: 'bairros-mais-valorizados-sp',
-    title: 'Os Bairros Mais Valorizados de São Paulo em 2026',
-    excerpt: 'Análise dos bairros que mais valorizaram e as regiões com maior potencial de crescimento para os próximos anos.',
-    content: `O mercado imobiliário de São Paulo continua dinâmico, com algumas regiões apresentando valorização acima da média. Confira nossa análise.
+    title: 'Planejamento de vias: quando priorizar rede ou pavimento primeiro',
+    excerpt: 'Ordem de serviço em obras urbanas: cenários em que abrir vala antes do binder evita retrabalho.',
+    content: `Em ruas sem saneamento adequado, instalar tubulação antes do revestimento definitivo evita picotar asfalto novo. Já em revestimento superficial com rede ok, o foco é preparo de base e drenagem longitudinal.
 
-Os Jardins mantêm sua posição como uma das regiões mais nobres da cidade, com valorização constante e alta demanda por imóveis de luxo.
+Calendário de chuvas importa: vala aberta no período úmido exige bomba e plano B para escoamento.
 
-A Vila Nova Conceição e o Itaim Bibi consolidaram-se como destinos preferidos de famílias que buscam qualidade de vida aliada à proximidade de serviços.
+A articulação com outros concessionários (água, gás, fibra) reduz corte sucessivo de pavimento — sinergia que parece burocrática mas economiza dinheiro público ou CAPEX privado.
 
-Moema, especialmente nas proximidades do Parque Ibirapuera, continua em alta, atraindo moradores que valorizam áreas verdes e infraestrutura completa.
-
-Pinheiros destaca-se pelo perfil jovem e vibrante, com forte valorização nos últimos anos devido à revitalização de áreas e chegada de novos empreendimentos.`,
-    image: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1200&q=80',
-    category: 'Mercado',
+O melhor projeto é aquele que a rua aguenta cinco anos sem buraco de retorno.`,
+    image: '/1.jpeg',
+    category: 'Infraestrutura',
     author: 'Carlos Eduardo Silva',
-    authorImage: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&q=80',
+    authorImage: '/18.jpeg',
     date: '15 Dez 2025',
     readTime: '8 min',
     featured: false
